@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: quartz
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/quartz?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: admin
+    test-on-borrow: true
+    validation-query: SELECT 1
+    test-while-idle: true
+    time-between-eviction-runs-millis: 3600000
+#below is for test
+cron:
+  frequency:
+    jobwithsimpletrigger: 5000
+    jobwithcrontrigger: */5 * * * * ?
+spring.profiles.active: dev
+quartz.enabled: true
+server:
+  port: 8999
